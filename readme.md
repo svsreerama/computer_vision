@@ -13,10 +13,7 @@ This project combines **vehicle detection, plate detection, and OCR** into a sin
 - **OCR support** for license plates (basic & advanced modes)
 - Annotated output images with bounding boxes
 - Display of **plate crops** as thumbnails
-- Download:
-  - Plate crops as a **ZIP archive**
-  - OCR results as a **CSV file**
-  - 
+
 # 🚗 License Plate Detection using YOLOv8
 
 ## 1. Problem Statement
