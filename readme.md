@@ -2,6 +2,15 @@
 
 A **Streamlit web app** that uses YOLO models to detect vehicles and license plates in images or video, predict vehicle type, and optionally run OCR on license plates.  
 This project combines **vehicle detection, plate detection, and OCR** into a single easy-to-use interface.
+YOLO is an object detection algorithm that processes the image in a single pass (one look) instead of scanning multiple regions like older methods (e.g., R-CNN).
+
+“You Only Look Once” → The model looks at the image once and directly predicts:
+
+Bounding boxes (where objects are)
+
+Class probabilities (what the objects are)
+
+👉 This makes YOLO fast and real-time, which is why it’s widely used in tasks like license plate detection, surveillance, and self-driving cars.
 
 ---
 
