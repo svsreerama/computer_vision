@@ -93,10 +93,6 @@ This project combines **vehicle detection, plate detection, and OCR** into a sin
 
 ## 2. Precision (~0.9)
 - **Definition:** Of all detected plates, how many are actually correct.  
-- **Formula:**  
-  \[
-  \text{Precision} = \frac{TP}{TP + FP}
-  \]  
 - **Interpretation:** 90% of detected plates are correct (few false positives).  
 👉 Model is good at **avoiding wrong detections**.
 
@@ -104,10 +100,6 @@ This project combines **vehicle detection, plate detection, and OCR** into a sin
 
 ## 3. Recall (~0.5)
 - **Definition:** Of all real plates present, how many the model actually detected.  
-- **Formula:**  
-  \[
-  \text{Recall} = \frac{TP}{TP + FN}
-  \]  
 - **Interpretation:** The model is catching only ~50% of plates.  
 👉 Model is **missing many plates** (low sensitivity).
 
