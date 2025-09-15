@@ -76,6 +76,62 @@ This project combines **vehicle detection, plate detection, and OCR** into a sin
 
   
 
+# Inference
+
+
+
+---
+
+## 1. Losses (box, cls, dfl)
+- **Box loss (Localization loss):** Measures how well predicted bounding boxes align with ground-truth plates.  
+- **Cls loss (Classification loss):** Measures how well the model predicts the correct class (e.g., "license plate").  
+- **Dfl loss (Distribution Focal Loss):** Refines bounding box edges for better accuracy.  
+
+✅ Losses **decreasing** → Model is learning correctly.
+
+---
+
+## 2. Precision (~0.9)
+- **Definition:** Of all detected plates, how many are actually correct.  
+- **Formula:**  
+  \[
+  \text{Precision} = \frac{TP}{TP + FP}
+  \]  
+- **Interpretation:** 90% of detected plates are correct (few false positives).  
+👉 Model is good at **avoiding wrong detections**.
+
+---
+
+## 3. Recall (~0.5)
+- **Definition:** Of all real plates present, how many the model actually detected.  
+- **Formula:**  
+  \[
+  \text{Recall} = \frac{TP}{TP + FN}
+  \]  
+- **Interpretation:** The model is catching only ~50% of plates.  
+👉 Model is **missing many plates** (low sensitivity).
+
+---
+
+## 4. mAP (Mean Average Precision)
+- **AP (Average Precision):** Area under the Precision-Recall curve.  
+- **mAP:** Mean AP across all classes (in this case, only "plate").  
+- Evaluated at different IoU thresholds:
+  - **mAP@50 (~0.55):** At IoU ≥ 0.5, the model detects plates correctly ~55% of the time.  
+  - **mAP@50-95 (~0.35):** Stricter metric (IoU 0.5 → 0.95). Performance drops when precise localization is required.  
+
+👉 Indicates decent baseline performance but room for improvement.
+
+---
+
+## 5. Quick Summary
+- **Losses ↓** → Model is learning.  
+- **Precision (0.9):** Very few wrong detections.  
+- **Recall (0.5):** Still missing ~half the plates.  
+- **mAP50 (0.55):** Decent starting point.  
+- **mAP50-95 (0.35):** Struggles with precise localization.  
+
+---
 
 
 
